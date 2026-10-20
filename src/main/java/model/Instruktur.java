@@ -1,6 +1,9 @@
 package model;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 5f8b914b6a2a0cc8301109a5b0e05f0ea9665917
 public class Instruktur extends Orang {
     private String keahlian;
 
@@ -22,7 +25,11 @@ public class Instruktur extends Orang {
 
     @Override
     public String getInfo() {
+<<<<<<< HEAD
         return "INSTRUKTUR | " + super.getInfo()
                 + " | Keahlian: " + getKeahlian();
+=======
+        return "INSTRUKTUR | " + super.getInfo() + " | Keahlian: " + getKeahlian();
+>>>>>>> 5f8b914b6a2a0cc8301109a5b0e05f0ea9665917
     }
 }

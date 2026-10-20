@@ -4,9 +4,12 @@ import model.Instruktur;
 import model.Kursus;
 import model.Peserta;
 
+<<<<<<< HEAD
 /**
  * Uji sederhana tanpa library tambahan untuk membuktikan validasi Pertemuan 6.
  */
+=======
+>>>>>>> 5f8b914b6a2a0cc8301109a5b0e05f0ea9665917
 public class UjiValidasi {
 
     private interface Aksi {
@@ -17,6 +20,7 @@ public class UjiValidasi {
         int pass = 0;
         int total = 9;
 
+<<<<<<< HEAD
         pass += harusBerhasil("Peserta valid", new Aksi() {
             @Override
             public void jalankan() {
@@ -79,6 +83,19 @@ public class UjiValidasi {
                 Kursus k = new Kursus();
                 k.setBiaya(-100000);
             }
+=======
+        pass += harusBerhasil("Peserta valid", () -> new Peserta(1, "Alya", "081234567890", "252001", "Informatika"));
+        pass += harusBerhasil("Instruktur valid", () -> new Instruktur(2, "Dina", "081211110001", "Java Desktop"));
+        pass += harusDitolak("ID negatif", () -> new Peserta(-1, "Alya", "081234567890", "252001", "Informatika"));
+        pass += harusDitolak("Nama kosong", () -> new Peserta(1, "", "081234567890", "252001", "Informatika"));
+        pass += harusDitolak("No HP huruf", () -> new Peserta(1, "Alya", "telepon", "252001", "Informatika"));
+        pass += harusDitolak("NIM kosong", () -> new Peserta(1, "Alya", "081234567890", "", "Informatika"));
+        pass += harusDitolak("Prodi kosong", () -> new Peserta(1, "Alya", "081234567890", "252001", ""));
+        pass += harusDitolak("Keahlian kosong", () -> new Instruktur(2, "Dina", "081211110001", ""));
+        pass += harusDitolak("Biaya negatif", () -> {
+            Kursus k = new Kursus();
+            k.setBiaya(-100000);
+>>>>>>> 5f8b914b6a2a0cc8301109a5b0e05f0ea9665917
         });
 
         System.out.println("\nHASIL: " + pass + "/" + total + " TEST PASS");

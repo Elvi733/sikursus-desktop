@@ -7,7 +7,10 @@ public class Kursus {
     private double biaya;
 
     public Kursus() {
+<<<<<<< HEAD
         // Disediakan untuk latihan setter pada praktikum.
+=======
+>>>>>>> 5f8b914b6a2a0cc8301109a5b0e05f0ea9665917
     }
 
     public Kursus(String kode, String nama, String level, double biaya) {

@@ -4,6 +4,7 @@ import model.Kursus;
 
 public class DemoKursus {
     public static void main(String[] args) {
+<<<<<<< HEAD
         Kursus k1 = new Kursus(
                 "JAVA-BSC",
                 "Java Desktop Fundamental",
@@ -34,5 +35,10 @@ public class DemoKursus {
                 + " | Actual: " + actual
                 + " | " + (pass ? "PASS" : "FAIL")
         );
+=======
+        Kursus k1 = new Kursus("JAVA-BSC", "Java Desktop Fundamental", "BASIC", 500000);
+        double hasil = k1.hitungBiayaSetelahDiskon(10);
+        System.out.println("Biaya setelah diskon: " + hasil);
+>>>>>>> 5f8b914b6a2a0cc8301109a5b0e05f0ea9665917
     }
 }

@@ -9,6 +9,7 @@ public class DemoInheritance {
     public static void main(String[] args) {
         ArrayList<Orang> daftarOrang = new ArrayList<>();
 
+<<<<<<< HEAD
         daftarOrang.add(new Peserta(
                 1, "Alya Rahma", "081234567890",
                 "252001", "Informatika"));
@@ -31,6 +32,17 @@ public class DemoInheritance {
         daftarOrang.add(new Instruktur(
                 102, "Rizal Maulana", "081211110002",
                 "Data Science"));
+=======
+        daftarOrang.add(new Peserta(1, "Alya Rahma", "081234567890", "252001", "Informatika"));
+        daftarOrang.add(new Peserta(2, "Rafi Akbar", "081298765432", "252002", "Informatika"));
+
+        Peserta pesertaUji = new Peserta(3, "Nama Lama", "080000000000", "252003", "Informatika");
+        pesertaUji.setNama("Siti Zahra");
+        daftarOrang.add(pesertaUji);
+
+        daftarOrang.add(new Instruktur(101, "Dina Pratama", "081211110001", "Java Desktop"));
+        daftarOrang.add(new Instruktur(102, "Rizal Maulana", "081211110002", "Data Science"));
+>>>>>>> 5f8b914b6a2a0cc8301109a5b0e05f0ea9665917
 
         System.out.println("=== DATA SIKURSUS ===");
         for (Orang orang : daftarOrang) {

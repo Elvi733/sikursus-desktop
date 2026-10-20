@@ -7,6 +7,7 @@ import model.Instruktur;
 import model.Orang;
 import model.Peserta;
 
+<<<<<<< HEAD
 /**
  * polymorphic argument, dan instanceof terkontrol.
  */
@@ -26,6 +27,15 @@ public class DemoPolymorphism {
                 "Operator Akademik");
 
         List<Orang> daftarOrang = new ArrayList<Orang>();
+=======
+public class DemoPolymorphism {
+    public static void main(String[] args) {
+        Peserta peserta = new Peserta(1, "Ahmad Fauzan", "081234567801", "252001", "Informatika");
+        Instruktur instruktur = new Instruktur(2, "Dina Pratama", "081211110001", "Java Desktop");
+        Admin admin = new Admin(3, "Rani Putri", "081233334444", "Operator Akademik");
+
+        List<Orang> daftarOrang = new ArrayList<>();
+>>>>>>> 5f8b914b6a2a0cc8301109a5b0e05f0ea9665917
         daftarOrang.add(peserta);
         daftarOrang.add(instruktur);
         daftarOrang.add(admin);

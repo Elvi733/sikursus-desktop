@@ -34,8 +34,12 @@ public class Peserta extends Orang {
 
     @Override
     public String getInfo() {
+<<<<<<< HEAD
         return "PESERTA | " + super.getInfo()
                 + " | NIM: " + getNim()
                 + " | Prodi: " + getProdi();
+=======
+        return "[Peserta] " + super.getInfo() + " | NIM: " + nim + " | Prodi: " + prodi;
+>>>>>>> 5f8b914b6a2a0cc8301109a5b0e05f0ea9665917
     }
 }

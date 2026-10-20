@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 app\UjiValidasi$5.class
 latihan\LatihanBiayaKursus.class
 app\UjiValidasi$7.class
@@ -15,13 +16,31 @@ app\UjiValidasi$4.class
 app\UjiPraktikum7.class
 latihan\LatihanBidangDatar.class
 model\Orang.class
+=======
+latihan\LatihanBiayaKursus.class
+app\UjiPraktikum7.class
+latihan\LatihanBidangDatar.class
+model\Orang.class
+app\DemoPolymorphism.class
+>>>>>>> 5f8b914b6a2a0cc8301109a5b0e05f0ea9665917
 app\UjiValidasi$Aksi.class
 view\FormPendaftaranKursus.class
 app\DemoInheritance.class
 model\Kursus.class
+<<<<<<< HEAD
 app\UjiValidasi$9.class
 view\txtHasil.class
 model\Peserta.class
 app\UjiValidasi.class
 app\UjiValidasi$1.class
+=======
+view\txtHasil.class
+model\Peserta.class
+app\DemoKursus.class
+model\Instruktur.class
+app\UjiValidasi.class
+view\FormPendaftaranAwal.class
+id\ac\uinbukittinggi\sikursus\desktop\main.class
+latihan\LatihanTerarah.class
+>>>>>>> 5f8b914b6a2a0cc8301109a5b0e05f0ea9665917
 model\Admin.class

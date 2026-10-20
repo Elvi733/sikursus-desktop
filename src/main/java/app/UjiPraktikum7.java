@@ -7,11 +7,14 @@ import javax.swing.JComboBox;
 import javax.swing.JRadioButton;
 import view.FormPendaftaranKursus;
 
+<<<<<<< HEAD
 /**
  * Verifikasi teknis untuk tiga skenario hitung utama Pertemuan 7.
  * File ini tidak diperlukan untuk penggunaan aplikasi; disertakan agar
  * project contoh mudah dicek tanpa mengubah form utama.
  */
+=======
+>>>>>>> 5f8b914b6a2a0cc8301109a5b0e05f0ea9665917
 public class UjiPraktikum7 {
 
     public static void main(String[] args) throws Exception {
@@ -29,21 +32,30 @@ public class UjiPraktikum7 {
             JCheckBox cbSertifikat = field(form, "cbSertifikat", JCheckBox.class);
             JCheckBox cbRekaman = field(form, "cbRekaman", JCheckBox.class);
 
+<<<<<<< HEAD
             // Skenario 5 panduan: Mahasiswa + Java Desktop + Modul + Sertifikat = Rp575.000.
+=======
+>>>>>>> 5f8b914b6a2a0cc8301109a5b0e05f0ea9665917
             rbMahasiswa.setSelected(true);
             cmbKursus.setSelectedItem("Java Desktop");
             cbModul.setSelected(true);
             cbSertifikat.setSelected(true);
             cbRekaman.setSelected(false);
+<<<<<<< HEAD
             cekSkenario(form, biayaDasar, biayaFasilitas, jenisPeserta,
                     "Skenario 5", 575000);
 
             // Skenario 6: Umum + Data Science + Rekaman = Rp690.000.
+=======
+            cekSkenario(form, biayaDasar, biayaFasilitas, jenisPeserta, "Skenario 5", 575000);
+
+>>>>>>> 5f8b914b6a2a0cc8301109a5b0e05f0ea9665917
             rbUmum.setSelected(true);
             cmbKursus.setSelectedItem("Data Science");
             cbModul.setSelected(false);
             cbSertifikat.setSelected(false);
             cbRekaman.setSelected(true);
+<<<<<<< HEAD
             cekSkenario(form, biayaDasar, biayaFasilitas, jenisPeserta,
                     "Skenario 6", 690000);
 
@@ -52,6 +64,13 @@ public class UjiPraktikum7 {
             cbRekaman.setSelected(false);
             cekSkenario(form, biayaDasar, biayaFasilitas, jenisPeserta,
                     "Skenario 7", 400000);
+=======
+            cekSkenario(form, biayaDasar, biayaFasilitas, jenisPeserta, "Skenario 6", 690000);
+
+            cmbKursus.setSelectedItem("UI/UX Design");
+            cbRekaman.setSelected(false);
+            cekSkenario(form, biayaDasar, biayaFasilitas, jenisPeserta, "Skenario 7", 400000);
+>>>>>>> 5f8b914b6a2a0cc8301109a5b0e05f0ea9665917
 
             String fasilitas = (String) ringkasanFasilitas.invoke(form);
             if (!fasilitas.contains("Tidak ada fasilitas tambahan")) {
