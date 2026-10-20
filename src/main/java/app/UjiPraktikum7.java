@@ -7,6 +7,11 @@ import javax.swing.JComboBox;
 import javax.swing.JRadioButton;
 import view.FormPendaftaranKursus;
 
+/**
+ * Verifikasi teknis untuk tiga skenario hitung utama Pertemuan 7.
+ * File ini tidak diperlukan untuk penggunaan aplikasi; disertakan agar
+ * project contoh mudah dicek tanpa mengubah form utama.
+ */
 public class UjiPraktikum7 {
 
     public static void main(String[] args) throws Exception {
@@ -24,23 +29,29 @@ public class UjiPraktikum7 {
             JCheckBox cbSertifikat = field(form, "cbSertifikat", JCheckBox.class);
             JCheckBox cbRekaman = field(form, "cbRekaman", JCheckBox.class);
 
+            // Skenario 5 panduan: Mahasiswa + Java Desktop + Modul + Sertifikat = Rp575.000.
             rbMahasiswa.setSelected(true);
             cmbKursus.setSelectedItem("Java Desktop");
             cbModul.setSelected(true);
             cbSertifikat.setSelected(true);
             cbRekaman.setSelected(false);
-            cekSkenario(form, biayaDasar, biayaFasilitas, jenisPeserta, "Skenario 5", 575000);
+            cekSkenario(form, biayaDasar, biayaFasilitas, jenisPeserta,
+                    "Skenario 5", 575000);
 
+            // Skenario 6: Umum + Data Science + Rekaman = Rp690.000.
             rbUmum.setSelected(true);
             cmbKursus.setSelectedItem("Data Science");
             cbModul.setSelected(false);
             cbSertifikat.setSelected(false);
             cbRekaman.setSelected(true);
-            cekSkenario(form, biayaDasar, biayaFasilitas, jenisPeserta, "Skenario 6", 690000);
+            cekSkenario(form, biayaDasar, biayaFasilitas, jenisPeserta,
+                    "Skenario 6", 690000);
 
+            // Skenario 7: Umum + UI/UX Design tanpa fasilitas = Rp400.000.
             cmbKursus.setSelectedItem("UI/UX Design");
             cbRekaman.setSelected(false);
-            cekSkenario(form, biayaDasar, biayaFasilitas, jenisPeserta, "Skenario 7", 400000);
+            cekSkenario(form, biayaDasar, biayaFasilitas, jenisPeserta,
+                    "Skenario 7", 400000);
 
             String fasilitas = (String) ringkasanFasilitas.invoke(form);
             if (!fasilitas.contains("Tidak ada fasilitas tambahan")) {

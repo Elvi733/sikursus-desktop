@@ -4,6 +4,9 @@ import model.Instruktur;
 import model.Kursus;
 import model.Peserta;
 
+/**
+ * Uji sederhana tanpa library tambahan untuk membuktikan validasi Pertemuan 6.
+ */
 public class UjiValidasi {
 
     private interface Aksi {
@@ -14,17 +17,68 @@ public class UjiValidasi {
         int pass = 0;
         int total = 9;
 
-        pass += harusBerhasil("Peserta valid", () -> new Peserta(1, "Alya", "081234567890", "252001", "Informatika"));
-        pass += harusBerhasil("Instruktur valid", () -> new Instruktur(2, "Dina", "081211110001", "Java Desktop"));
-        pass += harusDitolak("ID negatif", () -> new Peserta(-1, "Alya", "081234567890", "252001", "Informatika"));
-        pass += harusDitolak("Nama kosong", () -> new Peserta(1, "", "081234567890", "252001", "Informatika"));
-        pass += harusDitolak("No HP huruf", () -> new Peserta(1, "Alya", "telepon", "252001", "Informatika"));
-        pass += harusDitolak("NIM kosong", () -> new Peserta(1, "Alya", "081234567890", "", "Informatika"));
-        pass += harusDitolak("Prodi kosong", () -> new Peserta(1, "Alya", "081234567890", "252001", ""));
-        pass += harusDitolak("Keahlian kosong", () -> new Instruktur(2, "Dina", "081211110001", ""));
-        pass += harusDitolak("Biaya negatif", () -> {
-            Kursus k = new Kursus();
-            k.setBiaya(-100000);
+        pass += harusBerhasil("Peserta valid", new Aksi() {
+            @Override
+            public void jalankan() {
+                new Peserta(1, "Alya", "081234567890", "252001", "Informatika");
+            }
+        });
+
+        pass += harusBerhasil("Instruktur valid", new Aksi() {
+            @Override
+            public void jalankan() {
+                new Instruktur(2, "Dina", "081211110001", "Java Desktop");
+            }
+        });
+
+        pass += harusDitolak("ID negatif", new Aksi() {
+            @Override
+            public void jalankan() {
+                new Peserta(-1, "Alya", "081234567890", "252001", "Informatika");
+            }
+        });
+
+        pass += harusDitolak("Nama kosong", new Aksi() {
+            @Override
+            public void jalankan() {
+                new Peserta(1, "", "081234567890", "252001", "Informatika");
+            }
+        });
+
+        pass += harusDitolak("No HP huruf", new Aksi() {
+            @Override
+            public void jalankan() {
+                new Peserta(1, "Alya", "telepon", "252001", "Informatika");
+            }
+        });
+
+        pass += harusDitolak("NIM kosong", new Aksi() {
+            @Override
+            public void jalankan() {
+                new Peserta(1, "Alya", "081234567890", "", "Informatika");
+            }
+        });
+
+        pass += harusDitolak("Prodi kosong", new Aksi() {
+            @Override
+            public void jalankan() {
+                new Peserta(1, "Alya", "081234567890", "252001", "");
+            }
+        });
+
+        pass += harusDitolak("Keahlian kosong", new Aksi() {
+            @Override
+            public void jalankan() {
+                new Instruktur(2, "Dina", "081211110001", "");
+            }
+        });
+
+        pass += harusDitolak("Biaya negatif", new Aksi() {
+            @Override
+            public void jalankan() {
+                Kursus k = new Kursus();
+                k.setBiaya(-100000);
+            }
         });
 
         System.out.println("\nHASIL: " + pass + "/" + total + " TEST PASS");

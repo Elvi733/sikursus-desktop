@@ -1,5 +1,8 @@
 package model;
 
+/**
+ * Latihan penguatan Pertemuan 6: subtype baru tanpa mengubah loop polimorfik.
+ */
 public class Admin extends Orang {
     private String role;
 

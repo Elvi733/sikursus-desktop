@@ -46,6 +46,6 @@ public class Orang {
     }
 
     public String getInfo() {
-        return "ID: " + id + " | Nama: " + nama + " | No. HP: " + (noHp.isEmpty() ? "-" : noHp);
+        return getNama() + " | HP: " + (getNoHp().isEmpty() ? "-" : getNoHp());
     }
 }

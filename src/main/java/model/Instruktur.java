@@ -1,5 +1,6 @@
 package model;
 
+
 public class Instruktur extends Orang {
     private String keahlian;
 
@@ -21,6 +22,7 @@ public class Instruktur extends Orang {
 
     @Override
     public String getInfo() {
-        return "INSTRUKTUR | " + super.getInfo() + " | Keahlian: " + getKeahlian();
+        return "INSTRUKTUR | " + super.getInfo()
+                + " | Keahlian: " + getKeahlian();
     }
 }
