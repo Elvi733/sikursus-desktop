@@ -1,10 +1,12 @@
 app\UjiValidasi$5.class
 latihan\LatihanBiayaKursus.class
 dao\PesertaDAO.class
+view\MasterPeserta$2.class
 app\UjiValidasi$7.class
 app\DemoPolymorphism.class
 config\TestDatabase.class
 app\UjiValidasi$3.class
+view\MasterPeserta.class
 app\UjiValidasi$8.class
 view\FormPeserta.class
 app\UjiValidasi$2.class
@@ -20,6 +22,7 @@ latihan\LatihanBidangDatar.class
 model\Orang.class
 app\UjiValidasi$Aksi.class
 view\FormPendaftaranKursus.class
+view\MasterPeserta$1.class
 app\DemoInheritance.class
 model\Kursus.class
 app\UjiValidasi$9.class
