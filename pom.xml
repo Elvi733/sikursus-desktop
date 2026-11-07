@@ -6,14 +6,20 @@
 
     <groupId>id.ac.uinbukittinggi</groupId>
     <artifactId>sikursus-desktop</artifactId>
+<<<<<<< HEAD
     <version>1.0-RC1</version>
     <packaging>jar</packaging>
     <name>SIKURSUS Desktop</name>
+=======
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+>>>>>>> b48d638000f112bca0ad178e196a2cba7f02d08a
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
+<<<<<<< HEAD
         <jasperreports.version>6.21.5</jasperreports.version>
         <mysql.connector.version>8.0.33</mysql.connector.version>
     </properties>
@@ -48,6 +54,20 @@
         </plugins>
     </build>
 
+=======
+    </properties>
+
+    <!-- Tempat menampung library eksternal (Driver MySQL) -->
+    <dependencies>
+        <dependency>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
+            <version>8.2.0</version>
+        </dependency>
+    </dependencies>
+
+    <!-- NetBeans 8.2 memakai Maven lama. Paksa Central melalui HTTPS. -->
+>>>>>>> b48d638000f112bca0ad178e196a2cba7f02d08a
     <repositories>
         <repository>
             <id>central</id>

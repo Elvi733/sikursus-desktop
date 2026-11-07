@@ -336,7 +336,11 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
+<<<<<<< HEAD
                 <Property name="text" type="java.lang.String" value="Form Pendaftaran Kelas"/>
+=======
+                <Property name="text" type="java.lang.String" value="Form Pendaftaran kursus"/>
+>>>>>>> b48d638000f112bca0ad178e196a2cba7f02d08a
               </Properties>
             </Component>
           </SubComponents>
@@ -358,6 +362,10 @@
               <Color blue="3f" green="31" red="37" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Perempuan"/>
+<<<<<<< HEAD
+=======
+            <Property name="actionCommand" type="java.lang.String" value="Perempuan"/>
+>>>>>>> b48d638000f112bca0ad178e196a2cba7f02d08a
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbPerempuanActionPerformed"/>

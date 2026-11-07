@@ -1,5 +1,6 @@
 package config;
 
+<<<<<<< HEAD
     import java.sql.Connection;
     import java.sql.SQLException;
 
@@ -17,3 +18,22 @@ package config;
     }
     }
     }
+=======
+import java.sql.Connection;
+import java.sql.SQLException;
+
+public class TestDatabase {
+    public static void main(String[] args) {
+        try (Connection conn = Database.getConnection()) {
+            if (conn != null && conn.isValid(2)) {
+                System.out.println("KONEKSI BERHASIL ke db_sikursus");
+            } else {
+                System.out.println("Koneksi terbentuk tetapi tidak valid.");
+            }
+        } catch (SQLException e) {
+            System.out.println("KONEKSI GAGAL");
+            System.out.println(e.getMessage());
+        }
+    }
+}
+>>>>>>> b48d638000f112bca0ad178e196a2cba7f02d08a
