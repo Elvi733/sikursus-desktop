@@ -70,6 +70,17 @@ public class Peserta extends Orang {
         this.email = email;
     }
 
+    // =========================================================================
+    // ALIAS METHOD UNTUK NOMOR HP (Mencegah Error di FormPeserta)
+    // =========================================================================
+    public String getNomorHp() {
+        return getNoHp();
+    }
+
+    public void setNomorHp(String nomorHp) {
+        setNoHp(nomorHp);
+    }
+
     @Override
     public String getInfo() {
         return "PESERTA | " + super.getInfo()

@@ -25,7 +25,11 @@ public class PesertaDAO {
         return p;
     }
 
-    // CREATE / INSERT
+    // CREATE / INSERT (Mendukung alias tambahPeserta jika diperlukan)
+    public boolean tambahPeserta(Peserta p) throws SQLException {
+        return insert(p);
+    }
+
     public boolean insert(Peserta p) throws SQLException {
         String sql = "INSERT INTO peserta (nim, nama, jenis_kelamin, prodi, no_hp, email) VALUES (?, ?, ?, ?, ?, ?)";
         try (Connection conn = Database.getConnection();
@@ -40,7 +44,11 @@ public class PesertaDAO {
         }
     }
 
-    // READ / FIND ALL
+    // READ / FIND ALL (Alias untuk getAllPeserta agar sinkron dengan FormPeserta)
+    public List<Peserta> getAllPeserta() throws SQLException {
+        return findAll();
+    }
+
     public List<Peserta> findAll() throws SQLException {
         List<Peserta> data = new ArrayList<>();
         String sql = "SELECT id_peserta, nim, nama, jenis_kelamin, prodi, no_hp, email FROM peserta ORDER BY id_peserta DESC";
@@ -80,7 +88,11 @@ public class PesertaDAO {
         }
     }
 
-    // SEARCH / PENCARIAN (NIM atau Nama)
+    // SEARCH / PENCARIAN (Alias untuk searchPeserta agar sinkron dengan FormPeserta)
+    public List<Peserta> searchPeserta(String keyword) throws SQLException {
+        return search(keyword);
+    }
+
     public List<Peserta> search(String keyword) throws SQLException {
         List<Peserta> data = new ArrayList<>();
         String sql = "SELECT id_peserta, nim, nama, jenis_kelamin, prodi, no_hp, email FROM peserta WHERE nim LIKE ? OR nama LIKE ? ORDER BY nama";
