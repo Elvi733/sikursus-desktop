@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 21, 2026 at 06:17 PM
+-- Generation Time: Nov 25, 2026 at 05:06 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.2
 
@@ -143,10 +143,7 @@ INSERT INTO `pendaftaran` (`id_pendaftaran`, `id_peserta`, `id_kelas`, `tanggal_
 (4, 4, 3, '2026-11-11', 'AKTIF'),
 (5, 5, 2, '2026-11-14', 'AKTIF'),
 (6, 5, 2, '2026-11-21', 'DAFTAR'),
-(7, 1, 2, '2026-11-21', 'DAFTAR'),
-(8, 5, 2, '2026-11-21', 'DAFTAR'),
-(9, 5, 2, '2026-11-21', 'DAFTAR'),
-(10, 5, 2, '2026-11-21', 'DAFTAR');
+(7, 1, 2, '2026-11-21', 'DAFTAR');
 
 -- --------------------------------------------------------
 
@@ -221,7 +218,8 @@ ALTER TABLE `kelas`
 -- Indexes for table `kursus`
 --
 ALTER TABLE `kursus`
-  ADD PRIMARY KEY (`id_kursus`);
+  ADD PRIMARY KEY (`id_kursus`),
+  ADD UNIQUE KEY `uq_kursus_kode` (`kode_kursus`);
 
 --
 -- Indexes for table `pembayaran`
@@ -242,14 +240,15 @@ ALTER TABLE `pendaftaran`
 -- Indexes for table `peserta`
 --
 ALTER TABLE `peserta`
-  ADD PRIMARY KEY (`id_peserta`);
+  ADD PRIMARY KEY (`id_peserta`),
+  ADD UNIQUE KEY `uq_peserta_nim` (`nim`);
 
 --
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id_user`),
-  ADD UNIQUE KEY `username` (`username`);
+  ADD UNIQUE KEY `uq_users_username` (`username`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -283,7 +282,7 @@ ALTER TABLE `pembayaran`
 -- AUTO_INCREMENT for table `pendaftaran`
 --
 ALTER TABLE `pendaftaran`
-  MODIFY `id_pendaftaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_pendaftaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `peserta`
@@ -305,21 +304,21 @@ ALTER TABLE `users`
 -- Constraints for table `kelas`
 --
 ALTER TABLE `kelas`
-  ADD CONSTRAINT `fk_kelas_instruktur` FOREIGN KEY (`id_instruktur`) REFERENCES `instruktur` (`id_instruktur`),
-  ADD CONSTRAINT `fk_kelas_kursus` FOREIGN KEY (`id_kursus`) REFERENCES `kursus` (`id_kursus`);
+  ADD CONSTRAINT `fk_kelas_instruktur` FOREIGN KEY (`id_instruktur`) REFERENCES `instruktur` (`id_instruktur`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_kelas_kursus` FOREIGN KEY (`id_kursus`) REFERENCES `kursus` (`id_kursus`) ON UPDATE CASCADE;
 
 --
 -- Constraints for table `pembayaran`
 --
 ALTER TABLE `pembayaran`
-  ADD CONSTRAINT `fk_pembayaran_pendaftaran` FOREIGN KEY (`id_pendaftaran`) REFERENCES `pendaftaran` (`id_pendaftaran`);
+  ADD CONSTRAINT `fk_pembayaran_pendaftaran` FOREIGN KEY (`id_pendaftaran`) REFERENCES `pendaftaran` (`id_pendaftaran`) ON UPDATE CASCADE;
 
 --
 -- Constraints for table `pendaftaran`
 --
 ALTER TABLE `pendaftaran`
-  ADD CONSTRAINT `fk_pendaftaran_kelas` FOREIGN KEY (`id_kelas`) REFERENCES `kelas` (`id_kelas`),
-  ADD CONSTRAINT `fk_pendaftaran_peserta` FOREIGN KEY (`id_peserta`) REFERENCES `peserta` (`id_peserta`);
+  ADD CONSTRAINT `fk_pendaftaran_kelas` FOREIGN KEY (`id_kelas`) REFERENCES `kelas` (`id_kelas`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_pendaftaran_peserta` FOREIGN KEY (`id_peserta`) REFERENCES `peserta` (`id_peserta`) ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
